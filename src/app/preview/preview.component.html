@@ -1,0 +1,88 @@
+
+    <div>
+        <div class="container">
+           <div style="margin-top: 50px;">
+            <div class="row navbar navbar-light bg-light header">
+                <div class="col-md">
+                    <img *ngFor="let item of image1"  src={{item}} alt="" id="img">
+                    <br><h3>{{name}}</h3>
+                    
+                    <h6 id="designation">{{designation}}</h6>
+                </div>
+                <div class="col-md icon">
+                <table >
+                    <tr>
+                        <td style="width: 95%;">{{email}}</td>
+                        <td><i class="far fa-envelope email"></i></td>
+                    </tr>
+                    <tr>
+                        <td>{{mobile}}</td>
+                        <td><i class="fas fa-mobile-alt m_number"></i></td>
+                    </tr>
+                    <tr>
+                        <td>{{location}}</td>
+                        <td><i class="fas fa-map-marker-alt location" ></i></td>
+                    </tr>
+                    <tr>
+                        <td> {{in}}</td>
+                        <td><i class="fab fa-linkedin in"></i></td>
+                    </tr>
+                    <tr>
+                        <td>https://hackerrank/bhushansin1</td>
+                        <td><i class="fab fa-hackerrank hacker"></i></td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            </div>
+
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md" style="margin-left: 10px;">
+                    <label class="badge badge-light"><h5 class="skill">TECHNICAL SKILL</h5></label>
+                    <br>
+                    <h6 id="program">Programing Language</h6>
+                    <div class="program btn btn-primary"  *ngFor="let program of programingLanguage">{{program}}</div>
+                    <br>
+                    <h6 id="data">Database</h6>
+                    <div class="data btn btn-primary" *ngFor="let data of database">{{data}}</div>
+                    <br>
+                    <h6 id="webtech">Web Technology</h6>
+                    <div  *ngFor="let web of webTechnology" class="webtech btn btn-primary">{{web}}</div>
+                </div>
+                <div class="col-md">
+                    <label class="badge badge-light"><h5 class="project" >PROJECT</h5></label>
+                    <br><p id="project">{{project}}</p>
+                </div>
+
+            </div>
+            <div class="row">
+                
+                <div class="col-md"><br>
+                    <label class="badge badge-light"><h5 class="degree">EDUCATION</h5></label>
+                    <br> 
+                    <h6 id="degree">{{degree}}</h6>
+                </div>
+                <div class="col-md"><br>
+                    <label class="badge badge-light"><h5 class="experience">EXPERIENCE</h5></label>
+                    <br> <p id="experience">{{experience}}</p>
+                </div>
+                
+
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <br>
+                    <label class="badge badge-light"><h5 class="achievement">ACHIEVEMENTS</h5></label>
+                    <br><p id="achievement">{{achievement}}</p>
+                </div>
+                <div class="col-md">
+                    <br>
+                    <label class="badge badge-light"><h5 class="about">ABOUT</h5></label>
+                    <br><p id="about">{{about}}</p>
+                </div>
+
+            </div>
+            <button type="button" class="btn btn-dark" style="color: blue;margin-bottom: 15px; float: right;"><a routerLink="/profile">Go Back</a></button>
+        </div>
+    </div>
+    

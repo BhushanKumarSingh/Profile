@@ -1,0 +1,144 @@
+<app-header *ngIf=showResult></app-header>
+<div *ngIf=showResult class="container">
+<form class="form-control-lg" [formGroup]="profileData" (change)="update()">
+  <div class="row container-fluid">
+    <div class="col-md form-group">
+      <img *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
+        <input (change)="readFile($event)" class="form-control-file" type="file" accept="image/*" >
+        <p id="profile">Choose your profile Picture</p>
+      </div>
+      <div class="col-md form-group" > 
+        <label>
+          First Name
+        </label>
+        <input [class.is-invalid]="firstName.invalid && firstName.touched" type="text" name="firstName" formControlName="firstName" class="form-control" placeholder="Enter your first name" ngModel pattern="[a-zA-Z ]*">
+        <!-- <small [class.d-none]="profileData.get('firstName').valid||profileData.get('firstName').untouched" class="text-danger">First Name required</small> -->
+        <div *ngIf="firstName.invalid&&firstName.touched" class="text-danger">
+          <small *ngIf="firstName.errors?.required">First Name required</small>
+          <small *ngIf="firstName.errors?.pattern">Name must be string </small>
+          <small *ngIf="firstName.errors?.minlength">First name must be more than 2 charcater</small>
+         
+        </div>
+      </div>
+     
+      <div class="col-md form-group">
+          <label>
+            Last Name
+          </label>
+          <input type="text" [class.is-invalid]="lastName.invalid && lastName.touched" formControlName="lastName" class="form-control" placeholder="Enter your last name" ngModel pattern="[a-zA-Z ]*">
+          <div *ngIf="lastName.invalid&& lastName.touched" class="text-danger">
+            <small *ngIf="lastName.errors?.required">Last Name required</small>
+            <small *ngIf="lastName.errors?.pattern">Last name must be string </small>
+            <small *ngIf="lastName.errors?.minlength">Last name must be more than 2 charcater</small>
+           
+          </div>
+      </div>
+    </div>
+
+    <div class="row container-fluid">
+      <div class="col-md form-group">
+        <label>Email</label>
+        <input [class.is-invalid]="email.invalid && email.touched" type="email" name="email" formControlName="email" class="form-control" placeholder="Enter your email">
+        <small *ngIf="email.invalid && email.touched" class="text-danger"> Email is required</small>
+      </div>
+      <div class="col-md form-group">
+        <label>Mobile</label>
+        <input type="number"  formControlName="mobile" class="form-control" placeholder="Enter your mobile number">
+        
+
+      </div>
+      <div class="col-md form-group">
+        <label>Education</label>
+        <select class="form-control" formControlName="degree" placeholder="Choose your degree">
+          <option>Master in computer application</option>
+          <option>Bachlor in computer science</option>
+          <option>Others degree</option>
+        </select>
+      </div>
+    </div>
+    <div class="row container-fluid">
+      <div class="col-md form-group">
+        <label>Organisation</label>
+        <input type="text" formControlName="organisation" class="form-control" placeholder="Where you work">
+      </div>
+      <div class="col-md form-group">
+        <label>Designation</label>
+        <input type="text" formControlName="designation" class="form-control" placeholder="Your postion">
+      </div>
+      <div class="col-md form-group">
+        <label>Experience</label>
+        <select class="form-control" formControlName="experience" placeholder="Your experience">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>more then 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="row container-fluid">
+      <div class="col-md">
+        <div class="form-group">
+          <label>Project</label>
+          <textarea [class.is-invalid]="project.invalid && project.touched" class="form-control"  rows="3" formControlName="project" placeholder="Brief about your project"></textarea>
+          <small *ngIf="project.invalid && project.touched" class="text-danger">Project details is required</small>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-group">
+          <label>Skills</label>
+          <input [class.is-invalid]="skill.invalid && skill.touched" type="text" class="form-control" formControlName="skill" placeholder="Your skills">
+          <small *ngIf="skill.invalid && skill.touched" class="text-danger">Skills are required</small>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-group">
+          <label>Linkedin</label>
+          <input type="text" class="form-control" formControlName="in" placeholder="Enter your Linkedin id">
+        </div>
+      </div>
+    </div>
+
+    <div class="row container-fluid">
+      <div class="col-md">
+        <div class="form-group">
+          <textarea [class.is-invalid]="about.invalid && about.touched" class="form-control"  rows="3" formControlName="about" placeholder="Write about YourSelf..."></textarea>
+          <small *ngIf="about.invalid && about.touched" class="text-danger">About is required</small>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-group">
+          <label>Achievement</label>
+          <input [class.is-invalid]="achievement.invalid && achievement.touched" type="text" class="form-control" formControlName="achievement" placeholder="Enter your achievement">
+          <small *ngIf="achievement.invalid && achievement.touched" class="text-danger" >Achievement is required</small>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" class="form-control" formControlName="location" placeholder="Your location">
+        </div>
+      </div>
+    </div>
+
+    <div class="center pagination">
+      <a routerLink="/preview"><button type="button"[disabled]="firstName.errors?.required || lastName.errors?.required ||email.errors?.required" class="btn btn-dark">Preview</button></a>
+      <button type="reset" class="btn btn-dark">Reset</button>
+    </div>
+</form>
+
+<!--<br><div style="margin-top: 10%;">
+  <p>First Name: {{profileData.get('firstName').value}}</p>
+  <p>Middle Name: {{ profileData.get('middleName').value }}</p>
+  <p>Last Name: {{ profileData.get('lastName').value }}</p>
+  <p>Email: {{ profileData.get('email').value }}</p>
+  <p>Mobile: {{ profileData.get('mobile').value }}</p>
+  <p>Degree: {{ profileData.get('degree').value }}</p>
+  </div>-->
+ 
+</div>
+<!--<div *ngIf=!showResult>
+  <app-header *ngIf=false></app-header>
+  <app-preview></app-preview>
+  
+</div>-->

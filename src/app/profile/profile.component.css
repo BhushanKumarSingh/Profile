@@ -1,0 +1,31 @@
+button{
+    margin-right: 10px;
+    width: 100px;
+}
+.center{
+    margin-bottom: 10px;
+    
+}
+.pagination {
+    text-align: center;
+    display:flex;
+    justify-content:center;
+  }
+  #profile{
+    font-size: small;
+  }
+  label{
+      color: rgb(73, 72, 72);;
+  }
+  ::placeholder{
+      color: rgb(180, 175, 175);
+  }
+  #img{
+      width: 80px;
+      height: 80px;
+  }
+  .form-control-file {
+    font-size: 14px;
+    line-height: 0px;
+   }
+   
