@@ -30,41 +30,12 @@ export class PreviewComponent implements OnInit {
   profileDetails:FormGroup;
   bname:string;
   constructor(private profileService:ProfileService) {
-    
-   // this.profileService.myMethod$.subscribe((data)=>{
-     // console.log(data.value);
-    ///})
-    //console.log(this.profileComponent.profileData.value);
-    /*this.profileComponent.myObser.subscribe((x:any)=>{
-      console.log(x.value)
-      this.updateValues(x);
-    })*/
-   /* this.profileService.myMethod$.subscribe((data)=>{
-      console.log(data.value);
-      this.bks=data.value;
-      this.updateValues(data);
-      console.log(this.firstName+' bsk')
-    })
-    */
    this.profileDetails=this.profileService.getDetails();
    this.updateValues(this.profileDetails);
    this.image1=this.profileService.getImage();
    }
-   //result:boolean=false;
    bks:string;
   ngOnInit() {
-   /* this.profileComponent.myObser1.subscribe((x:any)=>{
-      console.log(x.value)
-      this.updateValues(x);
-    })*/
-  // this.profileComponent.myObser.subscribe((x:any)=>{
-    // this.updateValues(x);
-     
-  //});
-  /*this.profileComponent.myObser1.subscribe((img:any)=>{
-    this.image1=img;
-  })*/
- 
   }
   programingLanguage:Array<string>=[];
   webTechnology:Array<string>=[];
@@ -75,8 +46,6 @@ export class PreviewComponent implements OnInit {
   name:string="";
   technology:Array<string>=[];
   updateValues(x:FormGroup){
-    //console.log(x.get('firstName').value);
-    //console.log(x.get('firstNmae').value);
       this.firstName=x.get('firstName').value;
       this.middleName=x.get('middleName').value;
       this.lastName=x.get('lastName').value;

@@ -5,9 +5,10 @@ import { PreviewComponent } from './preview/preview.component';
 
 
 const routes: Routes = [
-  {path:'',component:ProfileComponent},
+ 
   {path:'profile',component:ProfileComponent},
-  {path:'preview',component:PreviewComponent}
+  {path:'preview',component:PreviewComponent},
+  {path:'',component:ProfileComponent}
 ];
 
 @NgModule({

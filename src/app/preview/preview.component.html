@@ -1,7 +1,7 @@
 
     <div>
         <div class="container">
-           <div style="margin-top: 50px;">
+           <div class="head">
             <div class="row navbar navbar-light bg-light header">
                 <div class="col-md">
                     <img *ngFor="let item of image1"  src={{item}} alt="" id="img">
@@ -12,7 +12,7 @@
                 <div class="col-md icon">
                 <table >
                     <tr>
-                        <td style="width: 95%;">{{email}}</td>
+                        <td>{{email}}</td>
                         <td><i class="far fa-envelope email"></i></td>
                     </tr>
                     <tr>
@@ -36,8 +36,8 @@
             </div>
             </div>
 
-            <div class="row" style="margin-top: 30px;">
-                <div class="col-md" style="margin-left: 10px;">
+            <div class="row details" >
+                <div class="col-md">
                     <label class="badge badge-light"><h5 class="skill">TECHNICAL SKILL</h5></label>
                     <br>
                     <h6 id="program">Programing Language</h6>
@@ -82,7 +82,7 @@
                 </div>
 
             </div>
-            <button type="button" class="btn btn-dark" style="color: blue;margin-bottom: 15px; float: right;"><a routerLink="/profile">Go Back</a></button>
+            <button type="button" class="btn btn-dark"><a routerLink="/profile">Go Back</a></button>
         </div>
     </div>
     

@@ -7,17 +7,12 @@ import { FormGroup } from '@angular/forms';
 })
 export class ProfileService {
 
- // myMethod$:Observable<any>;
-  //private sub=new Subject<any>();
+ 
   profileDetails:FormGroup;
   image=[];
   constructor() { 
-    //this.myMethod$=this.sub.asObservable();
-    //this.profileCom penent.myObser.su
+    
   }
-  //myMethod(profileData){
-    //console.log(profileData.value);
-    //this.sub.next(profileData);
     setDetails(details:FormGroup,base64textString){
       this.profileDetails=details;
       

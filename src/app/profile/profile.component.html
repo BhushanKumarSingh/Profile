@@ -1,5 +1,5 @@
-<app-header *ngIf=showResult></app-header>
-<div *ngIf=showResult class="container">
+<app-header></app-header>
+<div class="container">
 <form class="form-control-lg" [formGroup]="profileData" (change)="update()">
   <div class="row container-fluid">
     <div class="col-md form-group">
@@ -126,19 +126,5 @@
       <button type="reset" class="btn btn-dark">Reset</button>
     </div>
 </form>
-
-<!--<br><div style="margin-top: 10%;">
-  <p>First Name: {{profileData.get('firstName').value}}</p>
-  <p>Middle Name: {{ profileData.get('middleName').value }}</p>
-  <p>Last Name: {{ profileData.get('lastName').value }}</p>
-  <p>Email: {{ profileData.get('email').value }}</p>
-  <p>Mobile: {{ profileData.get('mobile').value }}</p>
-  <p>Degree: {{ profileData.get('degree').value }}</p>
-  </div>-->
  
 </div>
-<!--<div *ngIf=!showResult>
-  <app-header *ngIf=false></app-header>
-  <app-preview></app-preview>
-  
-</div>-->

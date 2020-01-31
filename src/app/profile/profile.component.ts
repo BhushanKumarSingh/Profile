@@ -46,26 +46,10 @@ export class ProfileComponent implements OnInit{
     })
     
   }
-  
- /* 
-  })*/
   bks;
   myObser;
   myObser1;
 update(){
-  //console.log(this.profileData.value);
- //this.bks= new PreviewComponent(this);
- //this.profileService.myMethod(this.profileData);
- //this.profileService.myMethod(this.profileData);
-//console.log(this.profileData.get('skill').value);
-  //this.myObser=new Observable((observer)=>{
-   // observer.next(this.profileData);
-   
-  //})/*
-  //console.log(this.profileData.get('firstName').value+'bsh');
-  //this.myObser1=new Observable((observer)=>{
- //   observer.next(this.base64textString);
- // })*/
   this.profileService.setDetails(this.profileData,this.base64textString);
 }
 get firstName(){
@@ -95,9 +79,7 @@ get about(){
 
   
   ngOnInit() {
-   //console.log(this.profileData.get('skill').value);
-   // edit(this.newProfile){ 
-      //this.obser.next(this.newProfile);
+ 
   }
   show(){
     this.showResult=false;
