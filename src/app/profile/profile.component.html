@@ -43,9 +43,11 @@
       </div>
       <div class="col-md form-group">
         <label>Mobile</label>
-        <input type="number"  formControlName="mobile" class="form-control" placeholder="Enter your mobile number">
-        
-
+        <input [class.is-invalid]="mobile.invalid && mobile.touched" type="text"  formControlName="mobile" class="form-control" placeholder="xxxxxxxxxx" ngModel pattern="[0-9 ]*">
+        <div *ngIf="mobile.invalid && mobile.touched" class="text-danger">
+        <small *ngIf="mobile.errors?.required">Mobile number required and must be digit</small>
+        <small *ngIf="mobile.errors?.maxlength || mobile.errors?.minlength || mobile.errors?.pattern">Must be 10 digits</small>
+      </div>
       </div>
       <div class="col-md form-group">
         <label>Education</label>
