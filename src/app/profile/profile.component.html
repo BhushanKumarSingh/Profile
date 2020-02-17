@@ -126,6 +126,7 @@
     <div class="center pagination">
       <a routerLink="/preview"><button type="button"[disabled]="firstName.errors?.required || lastName.errors?.required ||email.errors?.required" class="btn btn-dark">Preview</button></a>
       <button type="reset" class="btn btn-dark">Reset</button>
+      <button type="submit" (click)="saveResult()" class="btn btn-dark">Submit</button>
     </div>
 </form>
  

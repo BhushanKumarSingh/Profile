@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Profile } from "./profile";
+import {Profile} from "./profile";
 import { JsonPipe } from '@angular/common';
 
 @Injectable({
@@ -20,7 +20,6 @@ export class ProfileService {
     setDetails(details:FormGroup,base64textString){
       // console.log(JSON.stringify(this.http.get('http://localhost:8080/find')));
        this.profileDetails=details;
-     
       this.image=base64textString;
     }
     getDetails(){
@@ -28,6 +27,17 @@ export class ProfileService {
     }
     getImage(){
       return this.image;
+    }
+
+    profile=new Profile();
+    
+    save(profile:Profile){
+       var url="http://localhost:8080/add"
+    this.http.post(url,profile).subscribe(
+      (result:any)=>{
+        console.log(result);
+      }
+    ) 
     }
   }
  
