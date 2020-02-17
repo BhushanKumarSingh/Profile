@@ -5,3 +5,11 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 30px;
 }
+.search{
+   color: blue; 
+   text-align: center;
+   margin-right: 40px;
+}
+::placeholder{
+    color: rgb(180, 175, 175);
+}

@@ -3,7 +3,9 @@ import { Observable, Subject } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import {Profile} from "./profile";
-import { JsonPipe } from '@angular/common';
+import { ProfileComponent } from './profile/profile.component';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +40,16 @@ export class ProfileService {
         console.log(result);
       }
     ) 
+    }
+    profile1:any;
+    rs=false;
+    search(email:string){
+      var url="http://localhost:8080/search?email="+email;
+    this.http.get(url).subscribe(
+      (result:any)=>{
+        this.profile1=result;
+      } 
+    )
     }
   }
  

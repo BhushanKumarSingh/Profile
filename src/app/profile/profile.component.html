@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="container">
-<form class="form-control-lg" [formGroup]="profileData" (change)="update()">
+<form class="form-control-lg" [formGroup]="profileData" (mouseleave)="update()">
   <div class="row container-fluid">
     <div class="col-md form-group">
       <img *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
@@ -11,7 +11,7 @@
         <label>
           First Name
         </label>
-        <input [class.is-invalid]="firstName.invalid && firstName.touched" type="text" name="firstName" formControlName="firstName" class="form-control" placeholder="Enter your first name" ngModel pattern="[a-zA-Z ]*">
+        <input [class.is-invalid]="firstName.invalid && firstName.touched" type="text" name="firstName" formControlName="firstName" class="form-control" placeholder="Enter your first name" ngModel pattern="[a-zA-Z ]*" >
         <!-- <small [class.d-none]="profileData.get('firstName').valid||profileData.get('firstName').untouched" class="text-danger">First Name required</small> -->
         <div *ngIf="firstName.invalid&&firstName.touched" class="text-danger">
           <small *ngIf="firstName.errors?.required">First Name required</small>
@@ -124,9 +124,9 @@
     </div>
 
     <div class="center pagination">
-      <a routerLink="/preview"><button type="button"[disabled]="firstName.errors?.required || lastName.errors?.required ||email.errors?.required" class="btn btn-dark">Preview</button></a>
+      <a routerLink="/preview"><button type="button" class="btn btn-dark">Preview</button></a>
       <button type="reset" class="btn btn-dark">Reset</button>
-      <button type="submit" (click)="saveResult()" class="btn btn-dark">Submit</button>
+      <button type="submit" (click)="saveResult()" class="btn btn-dark" [disabled]="firstName.errors?.required || lastName.errors?.required ||email.errors?.required">Submit</button>
     </div>
 </form>
  

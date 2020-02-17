@@ -2,7 +2,7 @@ export class Profile {
     firstName: string;
     lastName: string;
     email: string;
-    mobile_no: string;
+    mobileNo: string;
     location: string;
     linkedin: string;
     education: string;
@@ -11,6 +11,53 @@ export class Profile {
     dbs: string;
     title: string;
     description: string;
+    designation: string;
+    experience: string;
+    about: string;
+    achievement: string;
+    organisation: string;
+
+    public get getOrganisation() {
+        return this.organisation;
+    }
+
+	public set setOrganisation(organisation: string) {
+    this.organisation= organisation;
+}
+
+
+    public get getDesignatio() {
+        return this.designation;
+    }
+
+	public set setDesignation( designation: string) {
+    this.designation = designation;
+}
+
+	public get getExperience() {
+    return this.experience;
+}
+
+	public set setExperience( experience: string) {
+    this.experience = experience;
+}
+
+	public get getAbout() {
+    return this.about;
+}
+
+	public set setAbout( about: string) {
+    this.about = about;
+}
+
+	public get getAchievement() {
+    return this.achievement;
+}
+
+	public set setAchievement( achievement: string) {
+    this.achievement = achievement;
+}
+
 
     public get getFirstName() {
         return this.firstName;
@@ -36,12 +83,12 @@ export class Profile {
         this.email = email;
     }
 
-    public get getMobile_no() {
-        return this.mobile_no;
+    public get getMobileNo() {
+        return this.mobileNo;
     }
 
-    public set setMobile_no(mobile_no: string) {
-        this.mobile_no = mobile_no;
+    public set setMobileNo(mobileNo: string) {
+        this.mobileNo = mobileNo;
     }
 
     public get getLocation() {

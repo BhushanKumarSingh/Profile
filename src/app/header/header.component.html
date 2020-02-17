@@ -1,5 +1,26 @@
 <div class="container">
-<div class="nav">
-    <h1>Your Profile</h1>
-</div>
+    <div class="nav row">
+        <div class="col-md">
+        <h1>Your Profile</h1>
+        </div>
+       
+            <div class="col-md">
+
+            </div>
+            <div class="col-md search">
+            <div>
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search by email" style="width: 80%; height: 40px;" [formControl]="email" (blur)="search()">
+                    <button type="submit" class="btn btn-outline-secondary" style="width: 60px;" (click)="set()" routerLink="/profile">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    
+                  </form>
+            </div>
+            <div>
+                <label>If You Alreday Submitted</label>
+            </div>
+        
+        </div>
+    </div>
 </div>
